@@ -146,7 +146,7 @@ app.use(custom_middleware);
 
 function custom_middleware(req, res, next) {
 
-    console.log(' GETS: '+numOfGets+'\n','POSTS: ' +numOfPosts+'\n','DELETES: '+numOfDeletes+'\n','PUTS: '+numOfPuts+'/n','PATCHES: '+numOfPatches);
+    console.log(' GETS: '+numOfGets+'\n','POSTS: ' +numOfPosts+'\n','DELETES: '+numOfDeletes+'\n','PUTS: '+numOfPuts+'\n','PATCHES: '+numOfPatches);
     next();
 };
 
