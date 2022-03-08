@@ -10,6 +10,7 @@ var numOfGets = 0;
 var numOfPosts = 0;
 var numOfDeletes = 0;
 var numOfPuts = 0;
+var numOfPatches = 0;
 
 
 
@@ -55,6 +56,7 @@ app.post('/', function(req, res, next){
 
 //Update the nationality of a student
 app.patch('/:id', function(req, res){
+    numOfPatches++
     let id = req.params.id;
 
     //Find the student 
@@ -144,7 +146,7 @@ app.use(custom_middleware);
 
 function custom_middleware(req, res, next) {
 
-    console.log(' GETS: '+numOfGets+'\n','POSTS: ' +numOfPosts+'\n','DELETES: '+numOfDeletes+'\n','PUTS: '+numOfPuts);
+    console.log(' GETS: '+numOfGets+'\n','POSTS: ' +numOfPosts+'\n','DELETES: '+numOfDeletes+'\n','PUTS: '+numOfPuts+'/n','PATCHES: '+numOfPatches);
     next();
 };
 
